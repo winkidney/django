@@ -222,7 +222,7 @@ class BaseDatabaseWrapper(object):
         if self.queries_logged:
             wrapped_cursor = self.make_debug_cursor(cursor)
         else:
-            wrapped_cursor = self.make_cursor(cursor)
+            wrapped_cursor = self.make_debug_cursor(cursor)
         return wrapped_cursor
 
     def _cursor(self, name=None):
